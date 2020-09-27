@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
     <data>
         <variable name="user" type="com.example.myapplication.databinding.UserBean"/>
         <variable name="main" type="com.example.myapplication.MainActivity"/>
@@ -25,12 +27,11 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{main::onClickGetData}"
-            />
+            android:text="navigation测试"
+            android:onClick="@{main.onClickFragment}" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{(view) -> main.changeUi(view,bol)}"
-            />
+            android:onClick="@{(view) -> main.changeUi(view,bol)}" />
     </LinearLayout>
 </layout>

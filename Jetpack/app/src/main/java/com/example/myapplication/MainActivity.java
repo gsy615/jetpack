@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -7,7 +8,6 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LifecycleRegistry;
 import androidx.lifecycle.Observer;
@@ -17,6 +17,7 @@ import com.example.myapplication.databinding.MainActivityBindingImpl;
 import com.example.myapplication.databinding.UserBean;
 import com.example.myapplication.databinding.UserBeanViewModel;
 import com.example.myapplication.lifecycle.ActivityLifeObserver;
+import com.example.myapplication.navigation.NavigationActivity;
 
 public class MainActivity extends AppCompatActivity implements LifecycleOwner {
     private static final String TAG ="MainActivity" ;
@@ -44,14 +45,18 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
             }
         });
 
+        binding.setMain(this);
+        binding.setBol(true);
+
         //TODO Lifecycle test
         registry = new LifecycleRegistry(this);
         registry.addObserver(new ActivityLifeObserver());
 
     }
 
-    public void onClickGetData(View view) {
-        Log.e(TAG,"onClickGetData");
+    public void onClickFragment(View view) {
+        Log.e(TAG,"onClickFragment");
+        startActivity(new Intent(this, NavigationActivity.class));
     }
 
     public void changeUi(View view,Boolean ischange){

@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/login_navigation"
+    android:id="@+id/navigation"
     app:startDestination="@id/TestFragment1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -29,5 +29,9 @@
         android:id="@+id/TestFragment3"
         android:name="com.example.myapplication.navigation.TestFragment3"
         android:label="test3"
-        tools:layout="@layout/fragment3" />
+        tools:layout="@layout/fragment3" >
+        <action
+            android:id="@+id/action_TestFragment3_to_TestFragment1"
+            app:destination="@id/TestFragment1" />
+    </fragment>
 </navigation>
