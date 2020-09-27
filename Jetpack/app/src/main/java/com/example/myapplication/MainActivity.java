@@ -18,8 +18,6 @@ import com.example.myapplication.databinding.UserBean;
 import com.example.myapplication.databinding.UserBeanViewModel;
 import com.example.myapplication.lifecycle.ActivityLifeObserver;
 
-import org.jetbrains.annotations.NotNull;
-
 public class MainActivity extends AppCompatActivity implements LifecycleOwner {
     private static final String TAG ="MainActivity" ;
     private LifecycleRegistry registry;
@@ -33,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
         binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
         UserBean user = new UserBean();
         user.setId("1111");
-        user.setName("222");
+        user.setName("2222");
         user.setPhoneNum("3333");
         binding.setUser(user);
         //TODO databinding 刷新绑定
@@ -62,11 +60,5 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
         } else {
             view.setVisibility(View.VISIBLE);
         }
-    }
-
-    @NotNull
-    @Override
-    public Lifecycle getLifecycle() {
-        return registry;
     }
 }

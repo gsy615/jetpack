@@ -11,12 +11,14 @@ public class UserBean extends BaseObservable {
 
     @Bindable
     public String getId() {
-        return name;
+        return id;
     }
+
     @Bindable
     public String getName() {
         return name;
     }
+
     @Bindable
     public String getPhoneNum() {
         return phoneNum;
